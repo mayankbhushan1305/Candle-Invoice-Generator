@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fineline Candles - Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="invoice-container">
+        <header class="invoice-header">
+            <h1>FINELINE CRAFTS & CANDLES</h1>
+            <p>Handcrafted Soy Wax Art Candles</p>
+        </header>
+
+        <div class="top-section">
+            <div class="input-group">
+                <label for="date">Date</label>
+                <input type="date" id="date">
+            </div>
+            <div class="input-group">
+                <label for="customer">Customer Name</label>
+                <input type="text" id="customer" placeholder="Enter customer name">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="item-entry">
+            <select id="candle">
+                <option value="" disabled selected>Select Product</option>
+                <!-- Product List from Fineline Catalog -->
+                <option value="150">Bubble Candle - ₹150</option>
+                <option value="220">Mini Bubble - ₹220/4 pcs</option>
+                <option value="60">Peony Flower - ₹60</option>
+                <option value="30">Daisy Flower - ₹30</option>
+                <option value="150">Lotus Pond - ₹150</option>
+                <option value="100">Rose Candle - ₹100</option>
+                <option value="650">Ribbed Pillar - ₹650</option>
+                <option value="300">Ribbed Cylinder - ₹300</option>
+                <option value="80">Teddy Candle - ₹80</option>
+                <option value="180">Daisy Bowl - ₹180</option>
+                <option value="80">Daisy Pot - ₹80</option>
+                <option value="250">Golden Gloom - ₹250</option>
+                <option value="500">Peony Jar - ₹500</option>
+                <option value="180">Peony Bowl - ₹180</option>
+                <option value="120">Laddoo Candle - ₹120/4 pcs</option>
+                <option value="250">Vanilla Swirl - ₹250</option>
+                <option value="80">Cupcake Candle - ₹80</option>
+                <option value="60">Rasmalai Candle - ₹60</option>
+                <option value="80">Floral Heart - ₹80</option>
+                <option value="80">Verdent Rose - ₹80</option>
+                <option value="20">Diya Candle - ₹20/pc</option>
+                <option value="60">Stand Diya Candle - ₹60/pc</option>
+                <option value="180">Berry Blast - ₹180</option>
+                <option value="140">Cylindrical Heart - ₹140</option>
+                <option value="100">Bouquet - ₹100</option>
+                <option value="100">Tulip Bouquet - ₹100</option>
+                <option value="250">Tulip Jar - ₹250</option>
+                <option value="180">Summer Blush - ₹180</option>
+            </select>
+
+            <input type="number" id="qty" placeholder="Qty" min="1">
+
+            <button onclick="addItem()" class="add-btn">Add Item</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50px;">No</th>
+                    <th>Description</th>
+                    <th style="width: 80px;">Qty</th>
+                    <th style="width: 100px;">Price</th>
+                    <th style="width: 120px;">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="invoiceBody">
+                <!-- Items will be added here -->
+            </tbody>
+        </table>
+
+        <div class="total-section">
+    Grand Total: ₹<span id="grandTotal">0</span>
+</div>
+
+        <button onclick="window.print()" class="print-btn">
+            Print Invoice
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
